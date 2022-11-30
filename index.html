@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+
+  <head>
+    <meta charset="utf-8">
+    <title>Metronome</title>
+
+    <!-- Reference for later styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&family=Roboto:wght@300;400&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous"> -->
+    <!-- <script src="index.js" charset="utf-8" defer></script> -->
+  </head>
+
+
+
+
+  <body>
+
+    <header>
+
+        <div class="title-text-container">
+            <h1 id="site-title">Metronome</h1>
+        </div>
+
+        <span class="navbar-container">
+            <ul class="navbar-list">
+                <li class="navbar-item"><div class="navbar-link-container"><a href="?">Metronome</a></div></li>
+                <li class="navbar-item"><div class="navbar-link-container"><a href="#">Automation</a></div></li>
+                <li class="navbar-item"><div class="navbar-link-container"><a href="?">About</a></div></li>
+            </ul>
+        </span>
+
+    </header>
+
+    
+
+
+    <main class="metronome">
+        <div class="metronome-container">
+            <div class="metronome-indicator-container">
+
+            </div>
+
+            <div class="metronome-controls-container">
+                <div class="subdivision-controls-container">
+                    <div class="subdividion-container">
+                        <input type="checkbox" id="quarter" name="quarter" value="quarter" checked>
+                        <label for="quarter">Quarter</label>
+                    </div>
+
+                    <div class="subdividion-container">
+                        <input type="checkbox" id="eighth" name="eighth" value="eighth">
+                        <label for="eighth">Eighth</label>
+                    </div>
+
+                    <div class="subdividion-container">
+                        <input type="checkbox" id="sixteenth" name="sixteenth" value="sixteenth">
+                        <label for="sixteenth">Sixteenth</label>
+                    </div>
+
+                    <div class="subdividion-container">
+                        <input type="checkbox" id="triplet" name="triplet" value="triplet">
+                        <label for="quarter">Triplet</label>
+                        <div class="subdivision-icon-container"></div>
+                    </div>
+                </div>
+
+                <div class="tempo-controls-container">
+                    <span class="tempo-controls">
+                        <button class="tempo-control" type="button">-10</button>
+                        <button class="tempo-control" type="button">-1</button>
+                        <input type="text" id="tempo" name="tempo" class="tempo-control" value="120">
+                        <button class="tempo-control" type="button">+1</button>
+                        <button class="tempo-control" type="button">+10</button>
+                    </span>
+
+                    <div class="start-stop-button-container">
+                        <button class="start-stop-button" type="button">Start</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+  </body>
+</html>
