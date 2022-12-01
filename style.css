@@ -176,3 +176,11 @@ button {
     border-radius: 5px;
     background-color: #ffffff;
 }
+
+button.tempo-control:hover {
+    cursor: pointer;
+}
+
+.start-stop-button:hover {
+    cursor: pointer;
+}
