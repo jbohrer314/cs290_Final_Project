@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="style.css">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&family=Roboto:wght@300;400&display=swap" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous"> -->
-    <!-- <script src="index.js" charset="utf-8" defer></script> -->
+    <script src="index.js" charset="utf-8" defer></script>
+
+    <!-- <audio controls src="./sounds/metronomeup.wav" id="click-up"></audio>
+    <audio controls src="./sounds/metronome.wav" id="click-down"></audio> -->
   </head>
-
-
-
 
   <body>
 
@@ -66,22 +66,22 @@
 
                     <div class="subdividion-container">
                         <input type="checkbox" id="triplet" name="triplet" value="triplet">
-                        <label for="quarter">Triplet</label>
+                        <label for="triplet">Triplet</label>
                         <div class="subdivision-icon-container"></div>
                     </div>
                 </div>
 
                 <div class="tempo-controls-container">
                     <span class="tempo-controls">
-                        <button class="tempo-control" type="button">-10</button>
-                        <button class="tempo-control" type="button">-1</button>
+                        <button class="tempo-control tempo-control-button" id="minus-ten" type="button">-10</button>
+                        <button class="tempo-control tempo-control-button" id="minus-one" type="button">-1</button>
                         <input type="text" id="tempo" name="tempo" class="tempo-control" value="120">
-                        <button class="tempo-control" type="button">+1</button>
-                        <button class="tempo-control" type="button">+10</button>
+                        <button class="tempo-control tempo-control-button" id="plus-one" type="button">+1</button>
+                        <button class="tempo-control tempo-control-button" id="plus-ten" type="button">+10</button>
                     </span>
 
                     <div class="start-stop-button-container">
-                        <button class="start-stop-button" type="button">Start</button>
+                        <button class="start-stop-button" type="button" value="paused">Start</button>
                     </div>
                 </div>
             </div>
