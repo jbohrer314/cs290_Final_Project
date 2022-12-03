@@ -157,8 +157,8 @@ function play_beat(time, interval) { // plays a single beat of the metronome wit
     }
 
     if (play_triplets()) { // playing eighth note subdivisions
-        play_click_low(time + triplet_interval/1000)
-        play_click_low(time + 2*triplet_interval/1000)
+        play_click_mid(time + triplet_interval/1000)
+        play_click_mid(time + 2*triplet_interval/1000)
     }
 
 }
