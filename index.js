@@ -14,9 +14,24 @@ function start_stop_click() { // alternates between different metronome states
 function start_metronome() { // starts metronome
     var button = start_stop_button
 
+    if (!parseInt(tempo.value)) {
+        alert("Please enter a number between 0 and 400")
+        return
+    }
+    else if (parseInt(tempo.value) < 0) {
+        alert("Please enter a number between 0 and 400")
+        return
+    }
+    else if (parseInt(tempo.value) > 400) {
+        alert("Please enter a number between 0 and 400")
+        return
+    }
+
     button.value = "playing"
     button.style.backgroundColor = "#ff0066"
     button.textContent = "Stop"
+    disable_tempo_entry()
+
     note_scheduler()
 
     console.log("Starting metronome")
@@ -28,6 +43,7 @@ function stop_metronome() { // stops metronome
     button.value = "paused"
     button.style.backgroundColor = "#99ebff"
     button.textContent = "Start"
+    enable_tempo_entry()
 
     clearInterval(met_object)
 
@@ -46,14 +62,6 @@ var tempo = document.getElementById("tempo")
 function get_ms_interval() { // converts bpm to ms per beat
     return 60000/tempo.value
 }
-
-// function metronome_cycle(interval) { // recursively calls setTimeout to dynamically assign tempo
-//     if (start_stop_button.value == "playing") {
-//         // play_beat(interval)
-//         play_click_high()
-//         setTimeout(function() {metronome_cycle(get_ms_interval())}, interval)
-//     }
-// }
 
 // var AudioContext = window.AudioContext || window.webkitAudioContext;
 var audioContext = new AudioContext()
@@ -96,15 +104,16 @@ document.getElementById("plus-ten").addEventListener("click", function() {
 
 function play_click_high(time) { // plays high metronome sound
     var osc = audioContext.createOscillator()
+    osc.type = "square"
     osc.connect(audioContext.destination)
     osc.frequency.value = 2000
     osc.start(time)
     osc.stop(time + 0.05)
-    
 }
 
 function play_click_mid(time) { // plays low metronome sound
     var osc = audioContext.createOscillator()
+    osc.type = "square"
     osc.connect(audioContext.destination)
     osc.frequency.value = 1500
     osc.start(time)
@@ -113,6 +122,7 @@ function play_click_mid(time) { // plays low metronome sound
 
 function play_click_low(time) { // plays low metronome sound
     var osc = audioContext.createOscillator()
+    osc.type = "square"
     osc.connect(audioContext.destination)
     osc.frequency.value = 1000
     osc.start(time)
@@ -145,6 +155,7 @@ function play_beat(time, interval) { // plays a single beat of the metronome wit
 
     if (play_quarters()) { // playing downbeats
         play_click_high(time)
+        schedule_display_flash(time, audioContext.currentTime)
     }
 
     if (play_eighths()) { // playing eighth note subdivisions
@@ -163,7 +174,23 @@ function play_beat(time, interval) { // plays a single beat of the metronome wit
 
 }
 
+async function flash_display() { // function flashes display when called
+    document.getElementsByClassName("metronome-indicator-container")[0].style.animation="flash 100ms linear"
+    setTimeout(function() {document.getElementsByClassName("metronome-indicator-container")[0].style.animation=""}, 100)
+}
 
+async function schedule_display_flash(time, current_time) {
+    setTimeout(flash_display, time-current_time)
+}
 
+function disable_tempo_entry() {
+    var tempo = document.getElementById("tempo")
+    tempo.disabled = true
+    tempo.style.backgroundColor = "#ebebeb"
+}
 
-
+function enable_tempo_entry() {
+    var tempo = document.getElementById("tempo")
+    tempo.disabled = false
+    tempo.style.backgroundColor = "#ffffff"
+}

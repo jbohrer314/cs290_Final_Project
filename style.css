@@ -106,6 +106,16 @@ ul {
     margin: 10px;
     margin-top: 20px;
     flex-grow: 1;
+
+    /* animation-name: flash;
+    animation-duration: 1000ms;
+    animation-timing-function: linear; */
+    /* animation: flash 1000ms linear; */
+}
+
+@keyframes flash {
+    from {background-color: #ff0066;}
+    to {background-color: #ffffff;}
 }
 
 .metronome-controls-container {
@@ -184,3 +194,5 @@ button.tempo-control:hover {
 .start-stop-button:hover {
     cursor: pointer;
 }
+
+
