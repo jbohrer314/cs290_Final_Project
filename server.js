@@ -18,6 +18,15 @@ app.get("/", function(req, res) {
   res.status(200).render("metronome")
 })
 
+app.get("/automation", function(req, res) {
+  res.status(200).render("automation")
+})
+
+app.get("/about", function(req, res) {
+  res.status(200).render("about")
+})
+
+
 // app.get("/posts/:post_number", function(req, res, next) {
 //   var post_number = req.params.post_number
 //   var post_content = postData[post_number]
