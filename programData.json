@@ -1,0 +1,65 @@
+[
+    {
+        "name": "program 1",
+        "program": [
+            {
+                "tempo": 120,
+                "counts": 16,
+                "quarter": true,
+                "eight": false,
+                "sixteen": true,
+                "triplet": true
+            },
+            {
+                "tempo": 120,
+                "counts": 8,
+                "quarter": true,
+                "eight": true,
+                "sixteen": false,
+                "triplet": false
+            }
+        ]
+    },
+    {
+        "name": "program 2",
+        "program": [
+            {
+                "tempo": 120,
+                "counts": 16,
+                "quarter": true,
+                "eight": false,
+                "sixteen": false,
+                "triplet": false
+            },
+            {
+                "tempo": 120,
+                "counts": 8,
+                "quarter": true,
+                "eight": true,
+                "sixteen": false,
+                "triplet": false
+            }
+        ]
+    },
+    {
+        "name": "program three",
+        "program": [
+            {
+                "tempo": 120,
+                "counts": 16,
+                "quarter": true,
+                "eight": true,
+                "sixteen": true,
+                "triplet": true
+            },
+            {
+                "tempo": 120,
+                "counts": 8,
+                "quarter": false,
+                "eight": true,
+                "sixteen": false,
+                "triplet": false
+            }
+        ]
+    }
+]

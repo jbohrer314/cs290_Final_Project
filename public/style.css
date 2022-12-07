@@ -249,7 +249,6 @@ button.tempo-control:hover {
     left: 20px;
     color: #6c6b6b;
     margin: 0px;
-
 }
 
 .open-program-link {
@@ -258,6 +257,67 @@ button.tempo-control:hover {
     text-decoration: none;
     color: #929292;
     font-weight: bolder;
+}
+
+.program-info-container {
+    height: 75px;
+    width: auto;
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: 15px;
+    border-color: #929292;
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+}
+
+.program-title-for-planner {
+    color: #6c6b6b;
+    margin: 0px;
+    flex-grow: 1;
+}
+
+.program-control-button {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #929292;
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    line-height: 35px;
+}
+
+.program-control-button:hover {
+    cursor: pointer;
+}
+
+.play-button {
+    background-color: #66ff33;
+    color: white;
+    font-weight: bolder;
+}
+
+.stop-button {
+    background-color: #ff0066;
+    color: white;
+    font-weight: bolder;
+}
+
+.save-button, .delete-button {
+    background-color: #cecece;
+    color: white;
+    font-weight: bolder;
+}
+
+.program-block-icon {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 

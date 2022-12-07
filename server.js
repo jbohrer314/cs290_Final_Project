@@ -1,7 +1,7 @@
 var path = require('path');
 var express = require('express');
 var exphbs = require('express-handlebars')
-// var postData = require("./postData.json")
+var program_data = require("./programData.json")
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -19,7 +19,7 @@ app.get("/", function(req, res) {
 })
 
 app.get("/automation", function(req, res) {
-  res.status(200).render("automation")
+  res.status(200).render("automation", {programs:program_data})
 })
 
 app.get("/about", function(req, res) {
@@ -27,21 +27,22 @@ app.get("/about", function(req, res) {
 })
 
 
-// app.get("/posts/:post_number", function(req, res, next) {
-//   var post_number = req.params.post_number
-//   var post_content = postData[post_number]
-//   if (post_content) {
-//     res.status(200).render("singlePost", post_content)
-//     console.log("rendering post number", post_number, "from handlebars")
-//   }
-//   else {
-//     next()
-//   }
-// })
+app.get("/automation/program/:program_index", function(req, res, next) {
+  var program_index = req.params.program_index
+  var program = program_data[program_index]
+  if (program) {
+    res.status(200).render("programPlanner", {
+      name:program.name,
+      blocks:program.program 
+    })
+  }
+  else {
+    next()
+  }
+})
 
 app.get('*', function (req, res) {
   res.status(404).render("404")
-  console.log("rendering 404 page")
 });
 
 app.listen(port, function () {

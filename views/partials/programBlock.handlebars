@@ -1,0 +1,56 @@
+<div class="program-block-icon program-list-container">
+    <div class="program-block-item-wrapper">
+        <label for="tempo">Tempo</label>
+        <input type="number" name="tempo" id="tempo" value="{{tempo}}">
+    </div>
+
+    <div class="program-block-item-wrapper">
+        <label for="counts">Counts</label>
+        <input type="number" name="counts" id="counts" value="{{counts}}">
+    </div>
+
+    <div class="program-block-item-wrapper">
+        {{#if quarter}}
+        <input type="checkbox" name="quarter" id="quarter" checked>
+        <label for="quarter">Quarter</label>
+        {{else}}
+        <input type="checkbox" name="quarter" id="quarter">
+        <label for="quarter">Quarter</label>
+        {{/if}}
+    </div>
+
+    <div class="program-block-item-wrapper">
+        {{#if eight}}
+        <input type="checkbox" name="eight" id="eight" checked>
+        <label for="eight">Eighth</label>
+        {{else}}
+        <input type="checkbox" name="eight" id="eight">
+        <label for="eight">Eighth</label>
+        {{/if}}
+    </div>
+
+    <div class="program-block-item-wrapper">
+        {{#if sixteen}}
+        <input type="checkbox" name="sixteen" id="sixteen" checked>
+        <label for="sixteen">Sixteenth</label>
+        {{else}}
+        <input type="checkbox" name="sixteen" id="sixteen">
+        <label for="sixteen">Sixteenth</label>
+        {{/if}}
+    </div>
+
+    <div class="program-block-item-wrapper">
+        {{#if triplet}}
+        <input type="checkbox" name="triplet" id="triplet" checked>
+        <label for="triplet">Triplet</label>
+        {{else}}
+        <input type="checkbox" name="triplet" id="triplet">
+        <label for="triplet">Triplet</label>
+        {{/if}}
+    </div>
+
+    <div class="program-block-item-wrapper">
+        <button class="delete-block-button">X</button>
+    </div>
+
+</div>

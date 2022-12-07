@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "start": "node server.js",
+    "quickstart": "node server.js",
+    "build": "handlebars views/partials/programIcon.handlebars -f public/programIcon.js && handlebars views/partials/programPlannerControls.handlebars -f public/programPlannerControls.js && handlebars views/partials/programBlock.handlebars -f public/programBlock.js",
+    "prestart": "npm run build"
+  },
   "dependencies": {
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
