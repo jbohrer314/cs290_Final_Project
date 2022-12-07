@@ -17,6 +17,14 @@
         "eight": true,
         "sixteen": false,
         "triplet": false
+      },
+      {
+        "tempo": 120,
+        "counts": 16,
+        "quarter": true,
+        "eight": true,
+        "sixteen": true,
+        "triplet": true
       }
     ]
   },
@@ -35,6 +43,35 @@
         "tempo": 120,
         "counts": 8,
         "quarter": false,
+        "eight": true,
+        "sixteen": false,
+        "triplet": false
+      }
+    ]
+  },
+  {
+    "name": "funny name",
+    "program": [
+      {
+        "tempo": 120,
+        "counts": 16,
+        "quarter": true,
+        "eight": true,
+        "sixteen": true,
+        "triplet": true
+      },
+      {
+        "tempo": 100,
+        "counts": 10,
+        "quarter": true,
+        "eight": false,
+        "sixteen": true,
+        "triplet": false
+      },
+      {
+        "tempo": 121,
+        "counts": 15,
+        "quarter": true,
         "eight": true,
         "sixteen": false,
         "triplet": false

@@ -322,6 +322,10 @@ button.tempo-control:hover {
     height: auto;
 }
 
+.delete-block-button:hover {
+    cursor: pointer;
+}
+
 
 
 

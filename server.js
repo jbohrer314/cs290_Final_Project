@@ -67,7 +67,6 @@ app.post("/automation/deleteProgram/:idx", function(req, res, next) {
 
 app.post("/automation/:idx/saveProgram", function(req, res, next) {
   var idx = req.params.idx
-  console.log(program_data[idx])
   if (program_data[idx]) {
     if (req.body && req.body.name && req.body.program) {
       var new_program = {

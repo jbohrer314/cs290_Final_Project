@@ -1,6 +1,5 @@
 // Sequencing section
 function add_new_program() { // adds new program to automation section
-    console.log("posting new program")
     fetch("/automation/newProgram", {
         method: "POST",
         body:"",

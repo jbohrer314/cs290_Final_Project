@@ -11,46 +11,46 @@
 
     <div class="program-block-item-wrapper">
         {{#if quarter}}
-        <input type="checkbox" name="quarter" id="quarter" checked>
-        <label for="quarter">Quarter</label>
+        <input type="checkbox" class="quarter" name="quarter" id="quarter{{@index}}{{index}}" checked>
+        <label for="quarter{{@index}}{{index}}">Quarter</label>
         {{else}}
-        <input type="checkbox" name="quarter" id="quarter">
-        <label for="quarter">Quarter</label>
+        <input type="checkbox" class="quarter" name="quarter" id="quarter{{@index}}{{index}}">
+        <label for="quarter{{@index}}{{index}}">Quarter</label>
         {{/if}}
     </div>
 
     <div class="program-block-item-wrapper">
         {{#if eight}}
-        <input type="checkbox" name="eight" id="eight" checked>
-        <label for="eight">Eighth</label>
+        <input type="checkbox" class="eight" name="eight" id="eight{{@index}}{{index}}" checked>
+        <label for="eight{{@index}}{{index}}">Eighth</label>
         {{else}}
-        <input type="checkbox" name="eight" id="eight">
-        <label for="eight">Eighth</label>
+        <input type="checkbox" class="eight" name="eight" id="eight{{@index}}{{index}}">
+        <label for="eight{{@index}}{{index}}">Eighth</label>
         {{/if}}
     </div>
 
     <div class="program-block-item-wrapper">
         {{#if sixteen}}
-        <input type="checkbox" name="sixteen" id="sixteen" checked>
-        <label for="sixteen">Sixteenth</label>
+        <input type="checkbox" class="sixteen" name="sixteen" id="sixteen{{@index}}{{index}}" checked>
+        <label for="sixteen{{@index}}{{index}}">Sixteenth</label>
         {{else}}
-        <input type="checkbox" name="sixteen" id="sixteen">
-        <label for="sixteen">Sixteenth</label>
+        <input type="checkbox" class="sixteen" name="sixteen" id="sixteen{{@index}}{{index}}">
+        <label for="sixteen{{@index}}{{index}}">Sixteenth</label>
         {{/if}}
     </div>
 
     <div class="program-block-item-wrapper">
         {{#if triplet}}
-        <input type="checkbox" name="triplet" id="triplet" checked>
-        <label for="triplet">Triplet</label>
+        <input type="checkbox" class="triplet" name="triplet" id="triplet{{@index}}{{index}}" checked>
+        <label for="triplet{{@index}}{{index}}">Triplet</label>
         {{else}}
-        <input type="checkbox" name="triplet" id="triplet">
-        <label for="triplet">Triplet</label>
+        <input type="checkbox" class="triplet" name="triplet" id="triplet{{@index}}{{index}}">
+        <label for="triplet{{@index}}{{index}}">Triplet</label>
         {{/if}}
     </div>
 
     <div class="program-block-item-wrapper">
-        <button class="delete-block-button" id="{{@index}}">X</button>
+        <button class="delete-block-button" id="{{@index}}{{index}}">X</button>
     </div>
 
 </div>
