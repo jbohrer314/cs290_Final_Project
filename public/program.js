@@ -1,18 +1,131 @@
 // Setting up buttons for program
 var play_button = document.getElementsByClassName("play-button")[0]
-play_button.addEventListener("click", function() {
-    console.log("Playing program")
-})
+play_button.addEventListener("click", start_advanced_metronome)
+
+var audioContext = new AudioContext()
+function play_click_high(time) { // plays high metronome sound
+    var osc = audioContext.createOscillator()
+    osc.type = "square"
+    osc.connect(audioContext.destination)
+    osc.frequency.value = 2000
+    osc.start(time)
+    osc.stop(time + 0.05)
+}
+
+function play_click_mid(time) { // plays low metronome sound
+    var osc = audioContext.createOscillator()
+    osc.type = "square"
+    osc.connect(audioContext.destination)
+    osc.frequency.value = 1500
+    osc.start(time)
+    osc.stop(time + 0.05)
+}
+
+function play_click_low(time) { // plays low metronome sound
+    var osc = audioContext.createOscillator()
+    osc.type = "square"
+    osc.connect(audioContext.destination)
+    osc.frequency.value = 1000
+    osc.start(time)
+    osc.stop(time + 0.05)
+}
+
+function play_beat_advanced(time, beat) { // plays a single beat of the metronome with all included subdivisions
+    var sixteenth_interval = beat.interval/4
+    var triplet_interval = beat.interval/3
+
+    if (beat.quarter) { // playing downbeats
+        play_click_high(time)
+    }
+
+    if (beat.eight) { // playing eighth note subdivisions
+        play_click_low(time + 2*sixteenth_interval/1000)
+    }
+
+    if (beat.sixteen) { // playing eighth note subdivisions
+        play_click_low(time + sixteenth_interval/1000)
+        play_click_low(time + 3*sixteenth_interval/1000)
+    }
+
+    if (beat.triplet) { // playing eighth note subdivisions
+        play_click_mid(time + triplet_interval/1000)
+        play_click_mid(time + 2*triplet_interval/1000)
+    }
+
+    return (time + beat.interval/1000)
+}
+
+function advanced_metronome_cycle(beat_array, start_time, idx=0) {
+    var new_start_time = play_beat_advanced(start_time, beat_array[idx])
+    if (play_advanced_metronome && beat_array[idx+1]) {
+        setTimeout(function() {
+            advanced_metronome_cycle(beat_array, new_start_time, idx+1)
+        }, (new_start_time - start_time)*1000 - 10)
+    }
+}
+
+function generate_beat_array(block_data) { // generates an array of data for each beat based on total block data
+    var beat_array = []
+    for (block of block_data) {
+        for (var idx = 0; idx < block.counts; idx++) {
+            beat_array.push({
+                interval:(60000/block.tempo),
+                quarter:block.quarter,
+                eight:block.eight,
+                sixteen:block.sixteen,
+                triplet:block.triplet
+            })
+        }
+    }
+    return beat_array
+}
+
+function check_for_bad_values() {
+    var block_data = generate_all_block_data()
+    for (block of block_data) {
+        if (block.tempo > 400 || block.tempo < 1) {
+            alert("Please make sure that all tempos are from 1 to 400 bpm")
+            return false
+        }
+        if (block.counts < 1) {
+            alert("Please make sure that all blocks have a positive number of counts")
+            return false
+        }
+    }
+    return true
+}
+
+var play_advanced_metronome = false
+function start_advanced_metronome() { // starts metronome
+    var block_data = generate_all_block_data()
+    var beat_array = generate_beat_array(block_data)
+    play_advanced_metronome = true
+    var start_time = audioContext.currentTime + 0.1
+    if (check_for_bad_values()) {
+        advanced_metronome_cycle(beat_array, start_time)
+    }
+}
 
 
 
 
 var stop_button = document.getElementsByClassName("stop-button")[0]
-stop_button.addEventListener("click", function() {
-    console.log("Stopping program")
+stop_button.addEventListener("click", stop_advanced_metronome)
+
+function stop_advanced_metronome() {
+    play_advanced_metronome = false
+}
+
+document.addEventListener('keyup', function (event) { // addes listener to space bar
+    if (event.code === 'Space') {
+        if (play_advanced_metronome) {
+            stop_advanced_metronome()
+        }
+        else {
+            start_advanced_metronome()
+        }
+    }
 })
-
-
 
 
 var save_button = document.getElementsByClassName("save-button")[0]

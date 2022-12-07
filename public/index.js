@@ -18,7 +18,7 @@ function start_metronome() { // starts metronome
         alert("Please enter a number between 0 and 400")
         return
     }
-    else if (parseInt(tempo.value) < 0) {
+    else if (parseInt(tempo.value) < 1) {
         alert("Please enter a number between 0 and 400")
         return
     }
@@ -54,6 +54,12 @@ var start_stop_button = document.getElementsByClassName("start-stop-button")[0]
 
 start_stop_button.addEventListener("click", start_stop_click)
 
+document.addEventListener('keyup', function (event) { // addes listener to space bar
+    if (event.code === 'Space') {
+        start_stop_click()
+    }
+})
+
 
 
 
@@ -65,7 +71,7 @@ function get_ms_interval() { // converts bpm to ms per beat
 
 // var AudioContext = window.AudioContext || window.webkitAudioContext;
 var audioContext = new AudioContext()
-var next_note_time = audioContext.currentTime;
+var next_note_time = audioContext.currentTime
 var met_object
 var interval
 
@@ -73,8 +79,8 @@ function note_scheduler() { // places future clicks in the audio context
     interval = get_ms_interval()
     
     while (next_note_time < audioContext.currentTime + 0.1) {
-        next_note_time += interval/1000;
-        play_beat(next_note_time, interval);
+        next_note_time += interval/1000
+        play_beat(next_note_time, interval)
     }
 
     met_object = setTimeout(note_scheduler, 0.5);

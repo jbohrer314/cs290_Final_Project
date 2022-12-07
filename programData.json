@@ -77,5 +77,26 @@
         "triplet": false
       }
     ]
+  },
+  {
+    "name": "test",
+    "program": [
+      {
+        "tempo": 120,
+        "counts": 4,
+        "quarter": true,
+        "eight": true,
+        "sixteen": false,
+        "triplet": false
+      },
+      {
+        "tempo": 80,
+        "counts": 4,
+        "quarter": true,
+        "eight": false,
+        "sixteen": false,
+        "triplet": true
+      }
+    ]
   }
 ]
