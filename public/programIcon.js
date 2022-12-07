@@ -12,6 +12,7 @@ templates['programIcon'] = template({"compiler":[8,">= 4.3.0"],"main":function(c
     + alias4(((helper = (helper = lookupProperty(helpers,"name") || (depth0 != null ? lookupProperty(depth0,"name") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data,"loc":{"start":{"line":2,"column":30},"end":{"line":2,"column":38}}}) : helper)))
     + "</h3>\r\n    <a href=\"/automation/program/"
     + alias4(((helper = (helper = lookupProperty(helpers,"index") || (data && lookupProperty(data,"index"))) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":3,"column":33},"end":{"line":3,"column":43}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"index") || (depth0 != null ? lookupProperty(depth0,"index") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":3,"column":43},"end":{"line":3,"column":52}}}) : helper)))
     + "\" class=\"open-program-link\">OPEN</a>\r\n</div>";
 },"useData":true});
 })();

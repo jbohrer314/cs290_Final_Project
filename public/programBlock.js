@@ -36,6 +36,8 @@ templates['programBlock'] = template({"1":function(container,depth0,helpers,part
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"sixteen") : depth0),{"name":"if","hash":{},"fn":container.program(9, data, 0),"inverse":container.program(11, data, 0),"data":data,"loc":{"start":{"line":33,"column":8},"end":{"line":39,"column":15}}})) != null ? stack1 : "")
     + "    </div>\r\n\r\n    <div class=\"program-block-item-wrapper\">\r\n"
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"triplet") : depth0),{"name":"if","hash":{},"fn":container.program(13, data, 0),"inverse":container.program(15, data, 0),"data":data,"loc":{"start":{"line":43,"column":8},"end":{"line":49,"column":15}}})) != null ? stack1 : "")
-    + "    </div>\r\n\r\n    <div class=\"program-block-item-wrapper\">\r\n        <button>X</button>\r\n    </div>\r\n\r\n</div>";
+    + "    </div>\r\n\r\n    <div class=\"program-block-item-wrapper\">\r\n        <button class=\"delete-block-button\" id=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"index") || (data && lookupProperty(data,"index"))) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":53,"column":48},"end":{"line":53,"column":58}}}) : helper)))
+    + "\">X</button>\r\n    </div>\r\n\r\n</div>";
 },"useData":true});
 })();

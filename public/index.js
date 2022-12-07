@@ -183,13 +183,13 @@ async function schedule_display_flash(time, current_time) {
     setTimeout(flash_display, time-current_time)
 }
 
-function disable_tempo_entry() {
+function disable_tempo_entry() { // prevents user from entering into tempo box
     var tempo = document.getElementById("tempo")
     tempo.disabled = true
     tempo.style.backgroundColor = "#ebebeb"
 }
 
-function enable_tempo_entry() {
+function enable_tempo_entry() { // enables user to enter into the tempo box
     var tempo = document.getElementById("tempo")
     tempo.disabled = false
     tempo.style.backgroundColor = "#ffffff"
