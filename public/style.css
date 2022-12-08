@@ -326,6 +326,10 @@ button.tempo-control:hover {
     cursor: pointer;
 }
 
+.about-content > p {
+    margin: 16px;
+}
+
 
 
 
